@@ -27,9 +27,19 @@ export default function LoginForm() {
           Please log in to continue.
         </h1>
         <div className="mb-4 rounded-md bg-blue-50 p-4 text-sm text-blue-800 border border-blue-200">
-          <p className="font-semibold mb-1">Demo Credentials:</p>
-          <p>Email: <span className="font-mono">user@nextmail.com</span></p>
-          <p>Password: <span className="font-mono">123456</span></p>
+          <p className="font-semibold mb-2">Demo Credentials:</p>
+          <div className="space-y-2">
+            <div>
+              <p className="font-medium">User 1:</p>
+              <p>Email: <span className="font-mono">user@nextmail.com</span></p>
+              <p>Password: <span className="font-mono">123456</span></p>
+            </div>
+            <div className="pt-1 border-t border-blue-200">
+              <p className="font-medium">User 2 (Galih):</p>
+              <p>Email: <span className="font-mono">galih@nextmail.com</span></p>
+              <p>Password: <span className="font-mono">galihnext123</span></p>
+            </div>
+          </div>
         </div>
         <div className="w-full">
           <div>
