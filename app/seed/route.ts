@@ -2,16 +2,21 @@ import bcrypt from 'bcrypt';
 import postgres from 'postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
-if (!process.env.POSTGRES_URL) {
-  throw new Error('POSTGRES_URL environment variable is not set');
+const connectionString = process.env.POSTGRES_URL;
+
+if (!connectionString) {
+  throw new Error(
+    'POSTGRES_URL is not defined. Please add it to your .env file.'
+  );
 }
 
-const sql = postgres(process.env.POSTGRES_URL, {
-  connection: {
-    application_name: 'nextjs-dashboard',
-  },
+const cleanUrl = connectionString.replace(/^["']|["']$/g, '').trim();
+
+const sql = postgres(cleanUrl, {
   ssl: 'require',
   max: 1,
+  idle_timeout: 20,
+  connect_timeout: 10,
 });
 
 async function seedUsers() {
