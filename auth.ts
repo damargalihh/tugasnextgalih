@@ -5,7 +5,11 @@ import type { User } from '@/app/lib/definitions';
 import bcrypt from 'bcrypt';
 import postgres from 'postgres';
 
-const sql = postgres(process.env.POSTGRES_URL!, {
+if (!process.env.POSTGRES_URL) {
+  throw new Error('POSTGRES_URL environment variable is not set');
+}
+
+const sql = postgres(process.env.POSTGRES_URL, {
   connection: {
     application_name: 'nextjs-dashboard',
   },
