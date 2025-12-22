@@ -1,9 +1,14 @@
 # 🔧 Fix Vercel Error: Server-side Exception
 
-## ❌ Masalah
-Error: `Application error: a server-side exception has occurred`
+## ❌ Error yang Muncul
+- `Application error: a server-side exception has occurred`
+- `Uncaught Error: An error occurred in the Server Components render`
+- Digest: 926890143 atau similar
 
-## ✅ Solusi
+## 🔍 Penyebab
+Environment variable `POSTGRES_URL` tidak di-set dengan benar di Vercel Dashboard
+
+## ✅ Solusi Lengkap
 
 Environment variables di Vercel Dashboard **TIDAK BOLEH** menggunakan tanda kutip.
 

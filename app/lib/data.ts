@@ -13,7 +13,10 @@ if (!process.env.POSTGRES_URL) {
   throw new Error('POSTGRES_URL environment variable is not set');
 }
 
-const sql = postgres(process.env.POSTGRES_URL, {
+// Clean the URL by removing any surrounding quotes
+const cleanUrl = process.env.POSTGRES_URL.replace(/^["']|["']$/g, '').trim();
+
+const sql = postgres(cleanUrl, {
   connection: {
     application_name: 'nextjs-dashboard',
   },
