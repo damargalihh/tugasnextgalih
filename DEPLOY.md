@@ -4,7 +4,7 @@
 
 ### 1. Database (dari Supabase)
 ```
-POSTGRES_URL=postgres://postgres.jibvlfpqvuzbzhyixbtx:4klNwPtTd2ePLjCX@aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x
+POSTGRES_URL=postgres://postgres.jibvlfpqvuzbzhyixbtx:4klNwPtTd2ePLjCX@aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true
 POSTGRES_PRISMA_URL=postgres://postgres.jibvlfpqvuzbzhyixbtx:4klNwPtTd2ePLjCX@aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true
 POSTGRES_URL_NON_POOLING=postgres://postgres.jibvlfpqvuzbzhyixbtx:4klNwPtTd2ePLjCX@aws-1-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require
 POSTGRES_USER=postgres
