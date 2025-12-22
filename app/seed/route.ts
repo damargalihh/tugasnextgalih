@@ -106,6 +106,14 @@ async function seedRevenue() {
 }
 
 export async function GET() {
+  // Only allow seeding in development
+  if (process.env.NODE_ENV === 'production') {
+    return Response.json(
+      { error: 'Seeding is disabled in production' },
+      { status: 403 }
+    );
+  }
+
   try {
     const result = await sql.begin((sql) => [
       seedUsers(),
