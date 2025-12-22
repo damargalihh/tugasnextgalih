@@ -32,7 +32,7 @@ export default function LoginForm() {
             <div>
               <p className="font-medium">User 1:</p>
               <p>Email: <span className="font-mono">user@nextmail.com</span></p>
-              <p>Password: <span className="font-mono">123456</span></p>
+              <p>Password: <span className="font-mono">tugasnext</span></p>
             </div>
             <div className="pt-1 border-t border-blue-200">
               <p className="font-medium">User 2 (Galih):</p>
