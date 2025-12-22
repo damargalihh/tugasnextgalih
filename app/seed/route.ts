@@ -6,6 +6,8 @@ const sql = postgres(process.env.POSTGRES_URL!, {
   connection: {
     application_name: 'nextjs-dashboard',
   },
+  ssl: 'require',
+  max: 1,
 });
 
 async function seedUsers() {

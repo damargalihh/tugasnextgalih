@@ -13,6 +13,8 @@ const sql = postgres(process.env.POSTGRES_URL!, {
   connection: {
     application_name: 'nextjs-dashboard',
   },
+  ssl: 'require',
+  max: 1,
 });
 
 export async function fetchRevenue() {
